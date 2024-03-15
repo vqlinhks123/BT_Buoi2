@@ -20,28 +20,31 @@ namespace VuQuangLinh_BT_Buoi2
                 check_data = int.TryParse(data, out num);
                 if (num < 2 || check_data == false)
                     Console.WriteLine("Du lieu khong hop le, vui long nhap lai!");
-            } while (check_data == false);
+            } while (num < 2 || check_data == false);
 
-            Console.WriteLine("Cac so nguyen to nho hon " + num + " la: ");
-
-            for (int i = 2; i < num; i++)
+            if (check_data == true)
             {
-                if (CheckPrimeNumber(i) == 1)
+                Console.WriteLine("Cac so nguyen to nho hon " + num + " la: ");
+
+                for (int i = 2; i < num; i++)
                 {
-                    Console.Write(i + " ");
+                    if (CheckPrimeNumber(i) == true)
+                    {
+                        Console.Write(i + " ");
+                    }
                 }
-            }
-            Console.WriteLine(" ");
+                Console.WriteLine(" ");
+            }             
         }
 
-        private int CheckPrimeNumber(int num)
+        private bool CheckPrimeNumber(int num)
         {
             for (int i = 2; i < num; i++)
             {
                 if (num % i == 0)
-                    return 0;
+                    return false;
             }
-            return 1;
+            return true;
         }
     }
 }

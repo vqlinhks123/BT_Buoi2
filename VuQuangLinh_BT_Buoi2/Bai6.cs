@@ -27,6 +27,11 @@ namespace VuQuangLinh_BT_Buoi2
 
         private bool CheckPassword(string pwd)
         {
+            //if (pwd == null)
+            //{
+            //    Console.WriteLine("Ban chua nhap mat khau");
+            //    return false;
+            //}
             bool checkAtSign = false;
             int temp = 0;          
             do
